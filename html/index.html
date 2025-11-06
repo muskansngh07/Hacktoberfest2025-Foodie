@@ -6,26 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foodie</title>
 
-    <!-- Description -->
     <meta name="description"
         content="Experience fast, reliable food delivery with a personalized touch. Our app combines advanced algorithms with vibrant design to bring delicious meals right to your door.">
 
-    <!-- Favicon -->
     <link rel="icon" href="../imgs/favicon.png" type="image/png" />
 
-    <!-- CSS link -->
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/cursor.css">
 
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Swiper.js CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <!-- AOS for animations -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 </head>
@@ -52,12 +46,10 @@
 
 
 <body>
-    <!-- UNIVERSAL NAVBAR -->
     <header>
         <nav class="navbar flex between wrapper">
             <div class="logo">Foodie.</div>
 
-            <!-- DESKTOP MENU -->
             <ul class="navList flex gap-3 between">
                 <li><a class="active" href="./index.html#home" data-i18n="nav.home">Home</a></li>
                 <li><a href="./menu.html" data-i18n="nav.menu">Menu</a></li>
@@ -66,7 +58,6 @@
                 <li><a href="nearbyres.html" data-i18n="nav.nearby">Nearby Restaurants</a></li>
             </ul>
             <div class="desktop-action flex gap-2">
-                <!-- Language Selector -->
                 <div class="language-selector">
                     <select id="language-select">
                         <option value="en">English</option>
@@ -74,7 +65,6 @@
                     </select>
                 </div>
 
-                <!-- Search Input -->
                 <form class="navbar-search hidden-search" action="#" method="get">
                     <input type="text" name="search" id="navbar-search" data-i18n="[placeholder]nav.searchPlaceholder"
                         aria-label="Search menu items">
@@ -83,28 +73,23 @@
                     </button>
                 </form>
 
-                <!-- Theme toggle -->
                 <button class="desktop-action theme-toggle" data-i18n-aria-label="nav.toggleDarkMode">
                     <i class="fa-solid fa-moon"></i>
                 </button>
 
-                <!-- Cart Icon -->
                 <a href="./checkout.html" class="cart-icon">
                     <i class="fa-solid fa-bag-shopping"></i>
                     <span class="cart-value">0</span>
                 </a>
 
-                <!-- Sign-in button -->
                 <a href="./signup.html" class="btn" data-i18n="nav.signIn">
                     Sign in&nbsp;<i class="fa-solid fa-arrow-right-from-bracket"></i>
                 </a>
 
-                <!-- Hamburger -->
                 <a href="#" class="hamberger"><i class="fa-solid fa-bars"></i></a>
             </div>
 
 
-            <!-- MOBILE MENU -->
             <ul class="mobile-menu">
                 <li><a class="active" href="./index.html#home" data-i18n="nav.home">Home</a></li>
                 <li><a href="./index.html#services" data-i18n="nav.services">Services</a></li>
@@ -112,8 +97,7 @@
                 <li><a href="./aboutUs.html" data-i18n="nav.about">About Us</a></li>
                 <li><a href="./contactUs.html" data-i18n="nav.contact">Contact Us</a></li>
                 <li><a href="nearbyres.html" data-i18n="nav.nearby">Nearby Restaurants</a></li>
-                 <!-- Search Input -->
-                <form class="navbar-search" action="#" method="get">
+                 <form class="navbar-search" action="#" method="get">
                     <input type="text" name="search" id="navbar-search" data-i18n="[placeholder]nav.searchPlaceholder"
                         aria-label="Search menu items">
                     <button type="submit" id="navbar-search-btn" data-i18n-aria-label="nav.search">
@@ -134,8 +118,6 @@
         </nav>
     </header>
 
-    <!-- MAIN SECTION -->
-    <!-- Offline Message -->
     <div id="offlineMessage" style="display: none; max-width: 500px; margin: 40px auto; padding: 20px; text-align: center; background: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;">
         <div style="font-size: 48px; color: #ff4444; margin-bottom: 15px;">
             <i class="fa-solid fa-wifi-slash"></i>
@@ -153,7 +135,6 @@
     </div>
 
     <main>
-        <!-- HERO SECTION -->
         <section id="home">
             <div class="hero-section flex wrapper">
                 <div class="content" data-aos="fade-right">
@@ -169,7 +150,6 @@
             </div>
         </section>
 
-        <!-- SERVICES SECTION -->
         <section id="services">
             <div class="wrapper p-top" data-aos="fade-up">
                 <div class="text-center">
@@ -204,7 +184,6 @@
             </div>
         </section>
 
-        <!-- review section -->
         <section>
             <div class="wrapper p-top flex gap-3" data-aos="fade-up">
                 <div class="image-container" data-aos="fade-right">
@@ -289,7 +268,6 @@
             </div>
         </section>
 
-        <!-- SECTION 04 -->
         <section id="about">
             <div class="wrapper p-top " data-aos="fade-up">
                 <div class="app-container flex gap-3">
@@ -306,7 +284,6 @@
             </div>
         </section>
 
-        <!-- SECTION 05 -->
         <section>
             <div class="wrapper p-top" data-aos="zoom-in">
                 <div class="text-center">
@@ -326,7 +303,6 @@
         </section>
     </main>
 
-    <!-- FOOTER -->
     <footer id="contacts" data-aos="fade-up">
         <div class="footer-container">
             <div class="flex wrapper gap-4">
@@ -383,11 +359,14 @@
         </div>
     </footer>
 
+    <a href="https://wa.me/911234567890" class="whatsapp-fab" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
     <a href="#home" class="back-to-top" aria-label="Back to top">
         <i class="fa-solid fa-arrow-up"></i>
     </a>
 
-    <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="../js/i18n.js"></script>
     <script src="../js/app.js"></script>
@@ -491,7 +470,7 @@
         window.addEventListener('online', checkConnection);
         window.addEventListener('offline', checkConnection);
         document.getElementById('retryButton').addEventListener('click', handleRetry);
-
+        
         // Back to top functionality
         (function () {
             const backToTop = document.querySelector('.back-to-top');
@@ -507,7 +486,6 @@
         })();
     </script>
 
-    <!-- AOS for Animations -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init({
@@ -520,8 +498,6 @@
 
     <script src="../js/newsletter.js"></script>
 
-    <!-- Search Redirect Script -->
-      <!-- Search Redirect Script -->
     <script>
         (function() {
             // Handle search form submission - redirect to menu.html with search query
