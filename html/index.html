@@ -53,6 +53,7 @@
             <!-- DESKTOP MENU -->
             <ul class="navList flex gap-3 between">
                 <li><a class="active" href="./index.html#home" data-i18n="nav.home">Home</a></li>
+                <li><a href="./index.html#services" data-i18n="nav.services">Services</a></li>
                 <li><a href="./menu.html" data-i18n="nav.menu">Menu</a></li>
                 <li><a href="./aboutUs.html" data-i18n="nav.about">About Us</a></li>
                 <li><a href="./contactUs.html" data-i18n="nav.contact">Contact Us</a></li>
@@ -60,11 +61,14 @@
             </ul>
             <div class="desktop-action flex gap-2">
                 <!-- Language Selector -->
-                <div class="language-selector">
-                    <select id="language-select">
-                        <option value="en">English</option>
-                        <option value="hi">हिंदी</option>
-                    </select>
+                <div class="custom-select" id="language-custom-select">
+                <div class="selected" tabindex="0" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="language-custom-select">
+                    English
+                </div>
+                <ul class="options" role="listbox" tabindex="-1">
+                    <li data-value="en" role="option" aria-selected="true">English</li>
+                    <li data-value="hi" role="option">हिंदी</li>
+                </ul>
                 </div>
 
                 <!-- Search Input -->
@@ -543,7 +547,7 @@
             });
         })();
     </script>
-
+<script src="../js/language-dropdown.js"></script>
 </body>
 
 </html>

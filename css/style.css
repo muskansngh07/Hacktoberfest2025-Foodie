@@ -281,6 +281,7 @@ header .navbar.wrapper {
     box-shadow: rgba(0, 0, 0, 0.1) 0 2px 1px;
     color: var(--pure-while);
     transition: 0.3s ease-in-out;
+    border: none;
 }
 
 .btn:hover {
@@ -342,32 +343,67 @@ header .navbar.wrapper {
 }
 
 /* LANGUAGE SELECTOR STYLING */
-.language-selector select {
-    background: var(--gold-finger);
-    color: var(--lead);
-    border: none;
-    padding: 0.5rem 1rem;
+/* LANGUAGE SELECTOR CUSTOM DROPDOWN - FIXED */
+.custom-select {
+    position: relative;
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--gold-finger);
     border-radius: 1rem;
-    font-size: 1rem;
+    width: 150px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    outline: none;
-    font-family: inherit;
-    overflow: hidden;
 }
-
-.language-selector select option {
-    border-radius: 0.75rem;
+.custom-select .selected {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem 1rem;
+    color: var(--text-primary);
 }
-
-.language-selector select:hover {
-    background: var(--lead);
-    color: var(--pure-while);
-    transform: scale(1.05);
+.custom-select .selected::after {
+    content: "\25BE";
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin-left: 0.5rem;
 }
-
-.language-selector select:focus {
-    box-shadow: 0 0 0 2px rgba(242, 189, 18, 0.5);
+.custom-select .options {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: var(--bg-secondary);
+    border: 2px solid var(--gold-finger);
+    border-radius: 1rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    opacity: 0;
+    transform: translateY(-6px);
+}
+.custom-select.open .options {
+    display: block;
+    animation: customSelectFade 0.25s ease forwards;
+}
+.custom-select .options li {
+    padding: 0.7rem 1rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+.custom-select .options li:hover {
+    background: var(--hint-yellow);
+}
+@keyframes customSelectFade {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .mobile-theme-toggle {
@@ -1196,43 +1232,6 @@ div#card-btn-container {
   background-color: #ff5722;
 }
 
-/* Custom dropdown */
-.custom-select {
-  position: relative;
-  width: 150px;
-  background-color: #fff;
-  cursor: pointer;
-}
-
-.custom-select .selected {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    gap: 0.5rem;
-}
-
-.custom-select .options {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  display: none;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-    z-index: 10;
-    opacity: 0;
-    transform: translateY(-6px);
-}
-
-.custom-select.open .options {
-    display: block;
-    animation: customSelectFade 0.25s ease forwards;
-}
-
 
 #search,
 #price-filter {
@@ -1247,64 +1246,6 @@ div#card-btn-container {
     box-shadow: 0 0 4px var(--gold-finger);
 }
 
-.custom-select {
-    position: relative;
-    border: 2px solid var(--gold-finger);
-    border-radius: 1rem;
-    background: var(--pure-while);
-    color: var(--lead);
-    width: 10rem;
-    cursor: pointer;
-}
-
-.custom-select .selected {
-    padding: 0.7rem 1rem;
-}
-
-.custom-select .selected::after {
-    content: "\25BE";
-    font-size: 1rem;
-    margin-left: auto;
-    color: currentColor;
-}
-
-.custom-select ul.options {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: none;
-    position: absolute;
-    left: 0;
-    right: 0;
-    background: var(--pure-while);
-    border: 2px solid var(--gold-finger);
-    border-radius: 1rem;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    z-index: 5;
-}
-
-.custom-select ul.options li {
-    padding: 0.6rem 1rem;
-}
-
-.custom-select ul.options li:hover {
-    background: var(--hint-yellow);
-}
-
-.custom-select.open ul.options {
-    display: block;
-}
-
-@keyframes customSelectFade {
-    from {
-        opacity: 0;
-        transform: translateY(-6px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 /* Favorites filter toggle */
 .fav-toggle {
