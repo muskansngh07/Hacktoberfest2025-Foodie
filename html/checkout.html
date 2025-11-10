@@ -7,7 +7,7 @@
   <title>Checkout - Foodie</title>
   <script>
     // Immediately apply saved theme to prevent FOUC
-    (function() {
+    (function () {
       const savedTheme = localStorage.getItem('theme');
       if (savedTheme === 'dark') {
         document.documentElement.setAttribute('data-theme', 'dark');
@@ -18,7 +18,7 @@
 
   <!-- Synchronous theme initialization to prevent FOUC -->
   <script>
-    (function() {
+    (function () {
       const savedTheme = localStorage.getItem('theme');
       if (savedTheme) {
         document.documentElement.setAttribute('data-theme', savedTheme);
@@ -82,7 +82,7 @@
         </button>
 
         <!-- Cart Icon -->
-        <a href="./checkout.html" class="cart-icon">
+        <a href="./checkout.html" class="cart-icon active">
           <i class="fa-solid fa-bag-shopping"></i>
           <span class="cart-value">0</span>
         </a>

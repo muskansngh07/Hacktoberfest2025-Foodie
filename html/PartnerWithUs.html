@@ -8,7 +8,7 @@
 
     <script>
         // Immediately apply saved theme to prevent FOUC
-        (function() {
+        (function () {
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme === 'dark') {
                 document.documentElement.setAttribute('data-theme', 'dark');
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/aboutUs.css" />
-    <link rel="stylesheet" href="../css/PartnerWithUs.css"/>
+    <link rel="stylesheet" href="../css/PartnerWithUs.css" />
     <link rel="stylesheet" href="../css/cursor.css">
 </head>
 
@@ -119,66 +119,67 @@
     </section>
 
     <!-- Partner Form Section -->
-<section class="partner-form-section">
-    <div class="wrapper">
-        <h2><span>Become a Partner</span></h2>
-        <p>Fill out the form below and our team will reach out to you shortly.</p>
+    <section class="partner-form-section">
+        <div class="wrapper">
+            <h2><span>Become a Partner</span></h2>
+            <p>Fill out the form below and our team will reach out to you shortly.</p>
 
-        <form action="#" class="partner-form two-column-form">
+            <form action="#" class="partner-form two-column-form">
 
-            <!-- Row 1 -->
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="restaurantName">Restaurant Name</label>
-                    <input type="text" id="restaurantName" name="restaurantName" placeholder="Enter restaurant name" required>
+                <!-- Row 1 -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="restaurantName">Restaurant Name</label>
+                        <input type="text" id="restaurantName" name="restaurantName" placeholder="Enter restaurant name"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ownerName">Owner Name</label>
+                        <input type="text" id="ownerName" name="ownerName" placeholder="Enter your name" required>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="ownerName">Owner Name</label>
-                    <input type="text" id="ownerName" name="ownerName" placeholder="Enter your name" required>
+
+                <!-- Row 2 -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required>
+                    </div>
                 </div>
+
+                <!-- Row 3 -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city" placeholder="Enter city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cuisine">Type of Cuisine</label>
+                        <input type="text" id="cuisine" name="cuisine" placeholder="e.g., Italian, Indian" required>
+                    </div>
+                </div>
+
+                <!-- Full-width field -->
+                <div class="form-group full-width">
+                    <label for="message">Additional Info</label>
+                    <textarea id="message" name="message" placeholder="Any other information"></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="cta-btn primary">Submit Application</button>
+            </form>
+
+            <!-- Success Toast for Partner Form -->
+            <div id="partner-success-toast" class="partner-success-toast" role="status" aria-live="polite">
+                <span class="partner-toast-icon">✔️</span>
+                <span class="partner-toast-msg">Application submitted successfully!</span>
             </div>
-
-            <!-- Row 2 -->
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="Enter email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required>
-                </div>
-            </div>
-
-            <!-- Row 3 -->
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="city">City</label>
-                    <input type="text" id="city" name="city" placeholder="Enter city" required>
-                </div>
-                <div class="form-group">
-                    <label for="cuisine">Type of Cuisine</label>
-                    <input type="text" id="cuisine" name="cuisine" placeholder="e.g., Italian, Indian" required>
-                </div>
-            </div>
-
-            <!-- Full-width field -->
-            <div class="form-group full-width">
-                <label for="message">Additional Info</label>
-                <textarea id="message" name="message" placeholder="Any other information"></textarea>
-            </div>
-
-            <!-- Submit Button -->
-            <button type="submit" class="cta-btn primary">Submit Application</button>
-        </form>
-
-        <!-- Success Toast for Partner Form -->
-        <div id="partner-success-toast" class="partner-success-toast" role="status" aria-live="polite">
-            <span class="partner-toast-icon">✔️</span>
-            <span class="partner-toast-msg">Application submitted successfully!</span>
         </div>
-    </div>
-</section>
+    </section>
 
 
 

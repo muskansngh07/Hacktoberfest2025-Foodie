@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Foodie | Login & Sign Up</title>
   <script>
     // Immediately apply saved theme to prevent FOUC
-    (function() {
+    (function () {
       const savedTheme = localStorage.getItem('theme');
       if (savedTheme === 'dark') {
         document.documentElement.setAttribute('data-theme', 'dark');
@@ -51,7 +52,8 @@
               <label for="loginPassword">Password</label>
               <div class="password-field">
                 <input type="password" id="loginPassword" placeholder="Enter your password" required />
-                <button type="button" class="toggle-password" onclick="togglePassword('loginPassword')" aria-label="Toggle password visibility">
+                <button type="button" class="toggle-password" onclick="togglePassword('loginPassword')"
+                  aria-label="Toggle password visibility">
                   👁️
                 </button>
               </div>
@@ -112,7 +114,8 @@
               <label for="signupPassword">Password</label>
               <div class="password-field">
                 <input type="password" id="signupPassword" placeholder="Create a strong password" required />
-                <button type="button" class="toggle-password" onclick="togglePassword('signupPassword')" aria-label="Toggle password visibility">
+                <button type="button" class="toggle-password" onclick="togglePassword('signupPassword')"
+                  aria-label="Toggle password visibility">
                   👁️
                 </button>
               </div>
@@ -162,11 +165,11 @@
 
     function changeHero() {
       if (isAnimating) return; // Prevent overlapping animations
-      
+
       isAnimating = true;
       index = (index + 1) % variations.length;
       const { emoji: newEmoji, text, gradient } = variations[index];
-      
+
       // Start fade out animation
       tagline.style.opacity = 0;
       emoji.style.opacity = 0;
@@ -174,15 +177,15 @@
       setTimeout(() => {
         // Change background gradient smoothly
         hero.style.background = gradient;
-        
+
         // Update content
         tagline.textContent = text;
         emoji.textContent = newEmoji;
-        
+
         // Fade back in
         tagline.style.opacity = 1;
         emoji.style.opacity = 1;
-        
+
         // Reset animation flag
         setTimeout(() => {
           isAnimating = false;
@@ -202,7 +205,7 @@
     themeToggle.addEventListener('click', () => {
       const theme = document.documentElement.getAttribute('data-theme');
       const newTheme = theme === 'dark' ? 'light' : 'dark';
-      
+
       document.documentElement.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
       updateThemeIcon(newTheme);
@@ -217,7 +220,7 @@
     function switchForm(formType) {
       const loginForm = document.getElementById('loginForm');
       const signupForm = document.getElementById('signupForm');
-      
+
       if (formType === 'signup') {
         loginForm.classList.remove('active');
         signupForm.classList.add('active');
@@ -231,7 +234,7 @@
     function togglePassword(inputId) {
       const input = document.getElementById(inputId);
       const button = input.nextElementSibling;
-      
+
       if (input.type === 'password') {
         input.type = 'text';
         button.textContent = '🙈';
@@ -257,4 +260,5 @@
     }
   </script>
 </body>
+
 </html>
