@@ -231,6 +231,85 @@ p {
 .mission-card h3 {
     margin-bottom: var(--space-sm);
 }
+.mission-card {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  height: 260px;
+  perspective: 1000px;
+  cursor: pointer;
+  border-radius: 20px;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  box-shadow:
+    var(--shadow-strong) 8px 8px 16px,
+    var(--shadow-strong) -8px -8px 16px inset;
+  transition: transform var(--transition-slow);
+}
+
+.mission-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform var(--transition-slow);
+  transform-style: preserve-3d;
+}
+
+.mission-card:hover .mission-inner {
+  transform: rotateY(180deg);
+}
+
+.mission-front,
+.mission-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  box-shadow:
+    var(--shadow-strong) 4px 4px 8px,
+    var(--shadow-strong) -4px -4px 8px inset;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+  transition: all var(--transition-slow);
+}
+
+.mission-front .mission-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.mission-front h3 {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.mission-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, var(--gold-finger), #ffb84d);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.mission-back p {
+    padding-top: 5px;
+  margin: 0;
+  font-size: clamp(0.8rem, 1.2vw, 0.95rem); 
+  line-height: 1.4;
+  word-wrap: break-word;
+  width: 90%;
+}
 
 /* ===========================
    STATS SECTION
