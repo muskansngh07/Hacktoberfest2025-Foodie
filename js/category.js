@@ -1,5 +1,3 @@
-// js/category.js
-
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize AOS animations
     if (typeof AOS !== 'undefined') {
@@ -66,16 +64,10 @@ function renderCategories(products, container) {
         card.setAttribute('data-aos-delay', (index * 100).toString()); // Staggered animation
 
         // Clicking the card redirects to menu.html filtered by this cuisine
-        // (Assuming menu.html can handle query params like ?cuisine=Italian)
-        // Since standard menu.html might not have query param logic built-in yet, 
-        // we'll just link to menu.html or a specific anchor.
-        
-        // However, to make it functional based on your existing app.js:
-        // You might need to update app.js to read ?search=CuisineName or similar.
-        // For now, we link to menu.html.
+        // using the dedicated 'cuisine' parameter.
         card.onclick = () => {
             // Encode the cuisine name for the URL
-            window.location.href = `menu.html?search=${encodeURIComponent(cat.name)}`;
+            window.location.href = `../html/menu.html?cuisine=${encodeURIComponent(cat.name)}`;
         };
 
         card.innerHTML = `

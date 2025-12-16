@@ -783,18 +783,43 @@ const loadProducts = async (retryCount = 0) => {
         productList = data;
         showCards(productList);
         restoreCartFromStorage();
-        
-        // Check for search query in URL and auto-populate search input
-        // Wait for DOM to be fully ready before accessing searchInput
         setTimeout(() => {
             const urlParams = new URLSearchParams(window.location.search);
+            let shouldApplyFilters = false;
+
+            // 1. Handle Search Param (?search=...)
             const searchQuery = urlParams.get('search');
             if (searchQuery) {
                 const searchInput = document.getElementById('search');
                 if (searchInput) {
                     searchInput.value = decodeURIComponent(searchQuery);
-                    applyFilters();
+                    shouldApplyFilters = true;
                 }
+            }
+
+            // 2. Handle Cuisine Param (?cuisine=...)
+            const cuisineParam = urlParams.get('cuisine');
+            if (cuisineParam) {
+                const decodedCuisine = decodeURIComponent(cuisineParam);
+                
+                // Update the global filter state variable
+                // (Assumes currentCuisineFilter is defined in the outer scope)
+                if (typeof currentCuisineFilter !== 'undefined') {
+                    currentCuisineFilter = decodedCuisine;
+                }
+
+                // Update the visual dropdown text to match the selected cuisine
+                // (Assumes cuisineSelected is defined in the outer scope)
+                if (typeof cuisineSelected !== 'undefined' && cuisineSelected) {
+                    cuisineSelected.textContent = decodedCuisine;
+                }
+                
+                shouldApplyFilters = true;
+            }
+
+            // Apply filters if either parameter was present
+            if (shouldApplyFilters) {
+                applyFilters();
             }
         }, 100);
     } catch (error) {
